@@ -12,10 +12,9 @@ public class Main {
     	// Get input from user
     	Scanner scanner = new Scanner(System.in);
     	System.out.println("Please enter your address:");
-    	String address = scanner.nextLine().replaceAll(",", "$0 ");
-    	
+    	String address = scanner.nextLine().replaceAll(",", ", ");
         //Pass the address to AddressServices
-        AddressComponets tokenizedAddress = AddressServices.inputAddress(address);
+        AddressComponets tokenizedAddress = AddressServices.inputAddress(address.replace(",  ", ", "));
         //end
         
         //error handling
@@ -38,5 +37,4 @@ public class Main {
         
     }
 }
-
 
